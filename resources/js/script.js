@@ -3,7 +3,7 @@
     /*---------------------------------------------------------*/
 
     function getPokemonInfoByName(name) {
-
+        
         // Looping through each pokemons
         for (var index in pokemonDataStore.pokemon) {
 
@@ -62,10 +62,10 @@
                     // Loop through each previous evolution
                     for (var pokes in pokemonDataStore.pokemon[index].prev_evolution) {
 
-                        console.log('%cPokemon: ' + pokemonDataStore.pokemon[index].prev_evolution[pokes].name, 'font-size:25px; color:black; font-family:cursive;');
+                        console.log('%cPokemon: ' + pokemonDataStore.pokemon[index].prev_evolution[pokes].name, 'font-size:25px;  font-family:cursive;');
 
                     }
-                    console.log('%chas ' + pokemonDataStore.pokemon[index].name + ' as next evolution!!', 'font-size:20px; color:black; font-family:cursive;');
+                    console.log('%chas ' + pokemonDataStore.pokemon[index].name + ' as next evolution!!', 'font-size:20px; font-family:cursive;');
 
                 } else {
 
@@ -88,7 +88,7 @@
 
     function getPokemonsByWeakness(weakness) {
 
-        console.log('%cPokemons which were found with Weakness ' + weakness + ' are:', 'font-size:25px; color:black; font-family:cursive;');
+        console.log('%cPokemons which were found with Weakness ' + weakness + ' are:', 'font-size:25px;  font-family:cursive;');
 
         // Looping through each pokemons
         for (var index in pokemonDataStore.pokemon) {
@@ -102,7 +102,7 @@
                     // Check if weakness of pokemon matches with the argument passed
                     if (pokemonDataStore.pokemon[index].weaknesses[particularWeakness].toLowerCase() === weakness.toLowerCase()) {
 
-                        console.log('%c' + pokemonDataStore.pokemon[index].name, 'font-size:20px; color:black; font-family:cursive;');
+                        console.log('%c' + pokemonDataStore.pokemon[index].name, 'font-size:20px;  font-family:cursive;');
 
                         // Once pokemon is found with particular weakness come out of the inner loop and continue with outer loop
                         break;
@@ -118,13 +118,15 @@
     /* ----------------------------------------------------------------------------- */
 
     function displayAllPokemons() {
-
-        // Looping through each pokemons
+        
+		// Looping through each pokemons
         for (var index in pokemonDataStore.pokemon) {
 
             // Pass the name of each pokemon to getPokemonInfoByName to get full detail
             getPokemonInfoByName(pokemonDataStore.pokemon[index].name);
         }
+
+        console.log('%cKindly refresh if all pokemons were not logged!!','color:red; font-size:30px; font-family:cursive;');
     }
 
     /*--------------------------------------*/
